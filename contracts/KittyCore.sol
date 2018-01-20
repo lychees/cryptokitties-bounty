@@ -124,7 +124,6 @@ contract KittyCore is KittyMinting {
     function unpause() public onlyCEO whenPaused {
         require(saleAuction != address(0));
         require(siringAuction != address(0));
-        require(geneScience != address(0));
         require(newContractAddress == address(0));
 
         // Actually unpause the contract.
