@@ -81,8 +81,7 @@ contract KittyCore is KittyMinting {
     ///  two auction contracts. (Hopefully, we can prevent user accidents.)
     function() external payable {
         require(
-            msg.sender == address(saleAuction) ||
-            msg.sender == address(siringAuction)
+            msg.sender == address(saleAuction)
         );
     }
 
@@ -123,7 +122,6 @@ contract KittyCore is KittyMinting {
     ///  newContractAddress set either, because then the contract was upgraded.
     function unpause() public onlyCEO whenPaused {
         require(saleAuction != address(0));
-        require(siringAuction != address(0));
         require(newContractAddress == address(0));
 
         // Actually unpause the contract.
