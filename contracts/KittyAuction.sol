@@ -30,9 +30,6 @@ contract KittyAuction is KittyOwnership {
         saleAuction = candidateContract;
     }
 
-    /// @dev Sets the reference to the siring auction.
-    /// @param _address - Address of siring contract.
-
     /// @dev Put a kitty up for auction.
     ///  Does some ownership trickery to create auctions in one tx.
     function createSaleAuction(
